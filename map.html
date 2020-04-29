@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>찾아오시는길 - nanji camping</title>
+<meta name="viewport" content="width=1200px">
+<meta name="description" content="배우리 개인 포트폴리오 사이트 - 난지캠핑장">
+<meta name="keyword" content="배우리, 포트폴리오, 리뉴얼, 포트폴리오사이트">
+<meta name="robot" content="index, follow">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+	<div class="skip_to_content">
+		<a href="#content">skip to content</a>
+	<!-- #아이디는 본문의 id와 연결 -->
+	</div>
+	<header class="subheader">
+		<h1><a href="index.html">logo</a></h1>
+		<nav>
+			<ul class="mainmenu clearfix">
+				<li><a href="nanjicamp.html" class="depth1">캠핑장소개</a>
+					<ul class="submenu1">
+						<li><a href="nanjicamp.html">난지캠프</a></li>
+						<li><a href="map.html">찾아오시는길</a></li>
+						<li><a href="camping_gallery.html">캠핑장전경</a></li>
+					</ul>
+				</li>
+				<li><a href="guide.html" class="depth1">이용안내</a>
+					<ul class="submenu1">
+						<li><a href="guide.html">이용안내</a></li>
+						<li><a href="clock_money.html">이용시간 및 요금안내</a></li>
+						<li><a href="compliance.html">준수사항</a></li>
+					</ul>
+				</li>	
+				<li><a href="reservation.html" class="depth1">예약 및 대여</a>
+					<ul class="submenu1">
+						<li><a href="reservation.html">예약하기</a></li>
+						<li><a href="cancellation.html">예약취소 및 확인</a></li>
+						<li><a href="loan.html">대여안내</a></li>
+					</ul>
+				</li>
+				<li><a href="notice.html" class="depth1">커뮤니티</a>
+					<ul class="submenu1">
+						<li><a href="notice.html">공지사항</a></li>
+						<li><a href="data.html">자료실</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+						<li><a href="question.html">질문하기</a></li>
+					</ul>
+					</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="breadcrumb">
+		<ul class="clearfix">
+			<li><a href="index.html">HOME</a> &gt; </li>
+			<li><a href="nanjicamp.html">캠핑장소개</a> &gt; </li>
+			<li><a href="map.html"><span>찾아오시는길</span></a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div id="content" class="map wrapper clearfix">
+			<h2 class="main-title sub"><a>찾아오시는길</a></h2>
+				<div id="map"></div>
+				<script>
+
+				  // This example displays a marker at the center of Australia.
+				  // When the user clicks the marker, an info window opens.
+
+				  function initMap() {
+					var NANJICAMP = {lat: 37.570385, lng: 126.872567};
+					var map = new google.maps.Map(document.getElementById('map'), {
+					  zoom: 14,
+					  center: NANJICAMP
+					});
+
+					var contentString = '<div id="content">'+
+						'<div id="siteNotice">'+
+						'</div>'+
+						'<h1 id="firstHeading" class="firstHeading">NANJICAMP</h1>'+
+						'<p>서울시 마포구 상암동 495-81</p>'+
+						'</div>'+
+						'</div>';
+
+					var infowindow = new google.maps.InfoWindow({
+					  content: contentString
+					});
+
+					var marker = new google.maps.Marker({
+					  position: NANJICAMP,
+					  map: map,
+					  title: 'NANJICAMP'
+					});
+					marker.addListener('click', function() {
+					  infowindow.open(map, marker);
+					});
+				  }
+				</script>
+				<script async defer
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSWe0UBJMCQ-hs4Fx_ipK6i4GtmJgsLV0&callback=initMap">
+				</script>
+				<div class="clearfix">
+					<table>
+						<tr>
+							<th><img src="images/sub1_02_address.png" alt="주소">주소</th>
+							<td>서울특별시 마포구 상암동 495-81</td>
+						</tr>
+						<tr>
+							<th><img src="images/sub1_02_call.png" alt="전화번호"> 전화</th>
+							<td>02-304-0061~3</td>
+						</tr>
+						<tr>
+							<th><img src="images/sub1_02_subway.png" alt="지하철"> 지하철 이용</th>
+							<td>2호선, 9호선 당산역 하차<br/>
+							8번출구-시내버스9707 탑승 후 한정거장</td>
+						</tr>
+						<tr>
+							<th><img src="images/sub1_02_bus.png" alt="버스"> 버스 이용</th>
+							<td>시내버스 9707<br/>
+							막차시간 : 25:00(당일확인바람)<br/>
+							선진운수(일산) : 031)923-8921</td>
+						</tr>
+					</table>
+				</div>
+
+		</div>
+	</div>
+
+	<footer>
+		<div class="footer-top">
+			<div class="container">
+				<p>
+					<a href="personal_data.html"><span>개인정보취급방침</span></a>
+					<a href="access_terms.html">이용약관</a>
+					<a href="email.html">이메일 수집거부</a>
+				</p>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container clearfix">
+				<div class="column-one-third">
+					<h1><a href="index.html">footer logo</a></h1>
+					<h2>운영시간</h2>
+					<p>입실 : 피크닉(10:30) / 캠핑(11:00)<br/>퇴실 : 피크닉(09:30) / 캠핑(09:30)</p>
+				</div>
+				<div class="column-one-third">
+					<h2 class="eng">Quick menu</h2>
+					<div class="clearfix quickmenu">
+						<ul>
+							<li><a href="nanjicamp.html">-난지캠프</a></li>
+							<li><a href="guide.html">-이용안내</a></li>
+							<li><a href="compliance.html">-준수사항</a></li>
+							<li><a href="notice.html">-공지사항</a></li>
+						</ul>
+						<ul>
+							<li><a href="map.html">-찾아오시는길</a></li>
+							<li><a href="clock_money.html">-이용시간 및 요금안내</a></li>
+							<li><a href="reservation.html">-예약하기</a></li>
+							<li><a href="sitemap.html">-사이트맵</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="column-one-third clearfix">
+					<h2 class="eng">social</h2>
+					<a href="#" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+					<p>
+						<a href="http://validator.kldp.org/check?uri=referer"
+						  onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))"><img
+						  src="//validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80"></a>
+					</p>
+					<h2 class="eng">contact us</h2>
+					<p>서울시 마포구 상암동 495-81 한강 시민공원 난지캠핑장<br/>
+Tel:02-304-0061~3 / Fax:02-6937-0519<br/>
+대표 이메일 : nanjicamp@naver.com</p>
+				</div>
+			</div>
+		</div> <!-- footer bottom -->
+		<div class="copy">
+			<p>Copyright &copy; baewooding. All rights reserved.</p>
+		</div>
+	</footer>
+</body>
+</html>
